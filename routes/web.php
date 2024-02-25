@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    
+    dispatch(function() {
+        sleep(5);
+        logger('job done!');
+    });
+
     return view('welcome');
 });
